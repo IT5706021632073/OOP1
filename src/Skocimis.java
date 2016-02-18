@@ -1,6 +1,9 @@
 import java.util.Scanner;
 public class Skocimis {
 
+	static int num[] = new int[3];
+	static int answer;
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int num1,num2,num3;
@@ -31,4 +34,32 @@ public class Skocimis {
 	System.out.println(((num3-num2)-1)+ " time.");
 	}
 
+	public static void Input(){
+		
+		Scanner scan = new Scanner(System.in);
+			System.out.print("Enter Number : ");
+			for(int i=0;i<num.length;i++){
+				num[i] = scan.nextInt(); 
+			}
+	}
+	
+	public static void Cal() {
+		if (num[0] <= 0 || num[0] >= 100) {
+			System.out.println("Invalid Input. Please enter again!!!");
+		} else if (num[1] <= 0 || num[1] >= 100) {
+			System.out.println("Invalid Input. Please enter again!!!");
+		} else if (num[2] <= 0 || num[2] >= 100) {
+			System.out.println("Invalid Input. Please enter again!!!");
+		} else if (num[1] <= num[0]) {
+			System.out.println("B must more than A. Please enter again!!!");
+		} else if (num[2] <= num[1]) {
+			System.out.println("C must more than B. Please enter again!!!");
+		}
+		answer = ((num[2] - num[1]) - 1);
+	}
+	
+	public static void Display() {
+		System.out.println("------- Show Output -------- ");
+		System.out.println(" Most played : " + answer + " time.");
+	}
 }

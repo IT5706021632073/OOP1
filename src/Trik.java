@@ -1,12 +1,20 @@
 import java.util.Scanner;
 public class Trik {
+	static int p = 1;
+	static char abc[]= new char[51];
 
 	public static void main(String[] args) {
-		int p = 1;
-		char abc[] = new char[100];
+		Input();
+		Calculate();
+		Show();
+	}
+	
+	public static void Input(){
 		Scanner scan = new Scanner(System.in);
 		System.out.print("Input Data : ");
 		abc=scan.next().toCharArray();
+	}
+	public static void Cal(){
 		
 		for (int i = 0 ; i < abc.length ; i++) {
 			if (abc[i]=='A') {
@@ -22,6 +30,12 @@ public class Trik {
 				else if (p==1) { p=3;}
 			}
 		}
-		System.out.print("Show Data : " + p);
 	}
+	
+	public static void Show(){
+		
+		System.out.print("Show Data : " + p);
+		
+	}
+	
 }
